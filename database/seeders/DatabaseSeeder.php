@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()
             ->hasProfile()
-            ->hasProjects(2)
+            ->hasProjects(8)
             ->hasQualities(4)
             ->hasTools(6)
             ->create();

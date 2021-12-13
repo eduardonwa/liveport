@@ -41,6 +41,8 @@
                     <x-project-details :project="$project"/>
                 </div> <!-- wrapper end -->
             @endforeach
+
+            {{$projects->links()}}
         </div> <!-- wrapper end -->
     </div> <!-- wrapper end -->
 

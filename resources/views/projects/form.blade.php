@@ -7,6 +7,7 @@
         class="focus:ring-2 border-t-0 border-l-0 border-r-0 border-b-2 border-gray-900 focus:ring-blue-200 rounded-sm h-14 text-xl bg-transparent w-3/5"
         type="text"
         name="title"
+        required
         placeholder="Title"
         value="{{ old('title') ?? $project->title }}"
     >
@@ -25,6 +26,7 @@
         <textarea 
             class="border-0 rounded-md min-w-full h-44"
             name="description"
+            required
             placeholder="Description">{{ old('description') ?? $project->description }}</textarea>
             @error('description')
                 <p class="text-red-500 absolute">
@@ -42,6 +44,7 @@
                 class="text-sm focus:ring-2 border-t-0 border-l-0 border-r-0 border-b-2 border-gray-900 focus:ring-blue-200 rounded-sm h-14 w-full bg-transparent"
                 type="text"
                 name="display_date"
+                required
                 placeholder="Date to display"
                 value="{{ old('display_date') ?? $project->display_date }}"
             >

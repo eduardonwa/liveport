@@ -1,8 +1,8 @@
 <div class="col-start-3 row-start-2">
     <div class="flex items-center justify-center md:justify-end h-24 
-                md:border-none border-2 border-gray-400">
+                md:border-none border border-t-0 border-b-0 border-gray-400"> 
         <div class="flex items-center space-x-6 
-                    md:border-2 md:border-t-0 md:border-r-0 md:rounded-bl-md border-gray-400 p-6 h-full">
+                    md:border md:border-t-0 md:border-r-0 md:rounded-bl-md p-6 h-full border-gray-400">
             <div>
                 <a href="/projects/{{ $project->id }}/edit">
                     <svg 

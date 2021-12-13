@@ -61,10 +61,12 @@
 
     <div class="flex flex-col md:grid grid-cols-2 gap-y-8 md:gap-x-20 m-8">
         @foreach ($profile as $profile)
-            <div class="flex items-center space-y-5 p-2 flex-col justify-center border border-gray-900 rounded-md">
-                <img class="rounded-full shadow-2xl" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
-                @include('qualities.create')
-                @include('toolbox.create')
+            <div class="relative">
+                <div class="md:sticky md:top-5 flex items-center space-y-5 p-2 flex-col justify-center border border-gray-900 rounded-md h-auto">
+                    <img class="rounded-full shadow-2xl" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
+                    @include('qualities.create')
+                    @include('toolbox.create')
+                </div>
             </div> <!-- profile picture & qualities end -->
             
             <div class="flex flex-col">
@@ -139,8 +141,8 @@
                                 </li>
                             </ul>
                         @endforeach
-                    </div>
-                </div>  <!-- toolbox end -->
+                    </div> <!-- toolbox end -->
+                </div>  <!-- toolbox & qualities end -->
 
             </div>
         @endforeach

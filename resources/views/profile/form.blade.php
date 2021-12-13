@@ -13,6 +13,7 @@
                 class="focus:ring-2 border-transparent border-0 text-center font-semibold border-gray-900 focus:ring-blue-200 rounded-sm h-14 text-xl bg-transparent w-full"
                 type="text"
                 name="full_name"
+                required
                 placeholder="Full name"
                 value="{{ old('full_name') ?? $profile->full_name }}"
             >
@@ -30,6 +31,7 @@
             <textarea 
                 class="border-0 rounded-md w-full h-48"
                 name="bio"
+                required
                 placeholder="About me...">{{ old('bio') ?? $profile->bio }}</textarea>
                 @error('bio')
                     <p class="text-red-500 absolute">
