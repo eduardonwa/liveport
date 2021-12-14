@@ -1,6 +1,6 @@
 @csrf
 <input
-    class="focus:ring-2 border-2 border-l-0 border-t-0 border-r-0 text-center font-semibold focus:ring-blue-200 rounded-sm h-8 text-sm bg-transparent w-full placeholder-italic"
+    class="focus:ring-2 bg-white border-2 border-l-0 border-t-0 border-r-0 text-center font-semibold focus:ring-blue-200 rounded-sm h-8 text-sm bg-transparent w-full placeholder-italic"
     type="text"
     name="tool"
     value="{{ old('tool') ?? $tool->tool }}"

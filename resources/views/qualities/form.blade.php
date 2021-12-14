@@ -1,9 +1,10 @@
 @csrf
 <input
-    class="focus:ring-2 border-2 border-l-0 border-t-0 border-r-0 text-center font-semibold focus:ring-blue-200 rounded-sm h-8 text-sm bg-transparent w-full placeholder-italic"
+    wire:model.lazy="quality"
+    class="focus:ring-2 bg-white border-2 border-l-0 border-t-0 border-r-0 text-center font-semibold focus:ring-blue-200 rounded-sm h-8 text-sm bg-transparent w-full placeholder-italic"
     type="text"
     name="quality"
-    value="{{ old('quality') ?? $quality->quality }}"
+    value="{{ old('qualities') ?? $qualities->quality }}"
     placeholder="New quality"
 >
     @error('quality')

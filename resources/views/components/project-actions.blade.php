@@ -1,8 +1,8 @@
 <div class="col-start-3 row-start-2">
     <div class="flex items-center justify-center md:justify-end h-24 
-                md:border-none border border-t-0 border-b-0 border-gray-400"> 
-        <div class="flex items-center space-x-6 
-                    md:border md:border-t-0 md:border-r-0 md:rounded-bl-md p-6 h-full border-gray-400">
+                md:border-none border border-t-0 border-b-0 bg-tri-two md:bg-transparent border-gray-900"> 
+        <div class="flex items-center space-x-6 bg-tri-two
+                    md:border md:border-t-0 md:border-r-0 md:rounded-bl-md p-6 h-full border-gray-900">
             <div>
                 <a href="/projects/{{ $project->id }}/edit">
                     <svg 

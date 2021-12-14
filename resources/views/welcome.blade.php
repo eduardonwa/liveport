@@ -26,12 +26,17 @@
         be sure to include this bit inside the div with the class of 'main-carousel'
         don't forget to add the comma if you have more than 2 properties! 
             data-flickity='{ "draggable": false }' */
+        .cool-bg {
+            background-color: #f7f5e5;
+            background-image: radial-gradient(#000000 1px, #f7f5e5 1px);
+            background-size: 20px 20px;
+        }
     </style>
 </head>
-<body>
+<body class="cool-bg">
 
     <div 
-        class="w-screen h-screen absolute bg-white"
+        class="w-screen h-screen absolute bg-yellow-50"
         x-data="{ loader : true}"
         x-init="setTimeout(()=>loader=false,300)"
         x-show="loader"
@@ -74,7 +79,7 @@
     >
         @foreach ($profile as $quote)
             <p 
-                class="text-4xl font-bold text-purple-800 italic text-opacity-85 leading-relaxed"
+                class="text-4xl font-bold text-purple-800 italic text-opacity-85 leading-relaxed text-center"
                 x-show="quote" x-transition.duration.1100ms.delay.50ms
             >
                 {{ $quote->optional }}
@@ -91,23 +96,23 @@
         </div> 
         
         <div 
-            class="carousel m-8"
+            class="carousel m-8 shadow-2xl rounded-md"
             data-flickity='{ "wrapAround": true }'
         >
             @foreach ($projects as $project)
 
-                <div class="carousel-cell w-full">
+                <div class="carousel-cell w-full bg-yellow-200">
                     <div class="flex flex-col md:flex-row h-full rounded-md md:space-x-2 md:space-y-0 space-y-4">
-                        <img src="https://picsum.photos/400" class="h-96" alt="">
+                        <img src="https://picsum.photos/400" class="h-96 rounded-tl-md rounded-bl-md" alt="">
                         <!-- project image -->
                         <div class="flex flex-col">
-                            <p class="border rounded-md p-4">
+                            <p class="rounded-md p-4">
                                 {{ $project->description }}
                             </p> <!-- project description end -->
         
-                            <div class="flex items-center justify-end p-2">
-                                <div class="pr-4 font-bold text-xl md:text-2xl"> {{ $project->title }} </div>
-                                <span class="rounded-full w-1 h-1 bg-black flex justify-center items-center"></span>
+                            <div class="flex items-center flex-col md:flex-col lg:flex-row lg:pr-8 justify-end p-2">
+                                <div class="md:pr-4 font-bold text-xl md:text-2xl"> {{ $project->title }} </div>
+                                <span class="rounded-full w-1 h-1 bg-black my-4 flex justify-center items-center"></span>
                                 <div class="px-4 text-gray-500"> {{ $project->display_date }} </div>
 
                                 @if ($project->url == true)
@@ -121,7 +126,7 @@
                                         </a> 
                                     </div> <!-- wrapper end -->
                                 @else
-                                    
+
                                 @endif
                             </div> <!-- details end -->
                         </div> <!-- description and details end-->
@@ -135,7 +140,7 @@
         <div class="flex flex-col md:items-end items-center justify-center md:mt-12 mt-20">
             <a 
                 href="#heythere"
-                class="font-semibold md:pr-12 text-gray-400"
+                class="font-semibold md:pr-12 text-gray-700"
             >
                 Top
             </a>

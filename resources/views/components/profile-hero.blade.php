@@ -12,8 +12,8 @@
     <div class="flex flex-col justify-start items-center h-full text-center">
         @foreach ($profile as $profile)
         <h1>My name is</h1>
-            <p class="font-bold text-lg">{{ $profile->full_name }}</p>
-            <p class="my-3 md:w-3/5">{{ $profile->bio }}</p>
+            <p class="font-bold text-2xl">{{ $profile->full_name }}</p>
+            <p class="my-3 md:w-3/5 text-lg">{{ $profile->bio }}</p>
             <ul>
                 <li class="flex items-center">
                     <img class="w-6 h-6" src="https://img.icons8.com/color/144/000000/linkedin.png"/>

@@ -1,5 +1,5 @@
-<div class="col-start-4 row-start-2 flex items-center justify-around 
-            border rounded-b-md md:rounded-br-md md:rounded-bl-none border-gray-400 p-4 h-24 border-t-0">
+<div class="col-start-4 row-start-2 flex items-center justify-around bg-tri-two
+            border rounded-b-md md:rounded-br-md md:rounded-bl-none border-gray-900 p-4 h-24 border-t-0">
                         
     <div class="text-center">
         <p class="font-bold opacity-15">Published</p>

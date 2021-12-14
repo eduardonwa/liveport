@@ -4,12 +4,12 @@
 
     <div class="flex flex-col justify-evenly items-start h-full md:flex-row md:justify-around m-6 md:mt-12 md:m-20 gap-x-12 md:flex-1">
 
-       <div class="rounded-md border border-gray-900 flex flex-col items-center justify-center md:w-2/4 p-8 mb-4">
+       <div class="rounded-md border border-gray-900 flex flex-col items-center justify-center md:w-2/4 p-8 mb-4 bg-yellow-100">
             <div class="flex items-center flex-col md:flex-row md:justify-between w-full md:mb-4 mb-8">
-                <span class="text-gray-700 font-semibold">Profile</span>
+                <span class="font-semibold text-3xl">👤</span>
                 <a 
                     href="profile/{{ auth()->user()->profile->id }}/edit"
-                    class="font-semibold hover:text-green-500 hover:underline transition ease-in-out text-xl"
+                    class="font-semibold hover:text-purple-500 hover:underline transition ease-in-out text-xl"
                 >
                     Edit
                 </a>
@@ -26,18 +26,17 @@
                     {{ $profile->bio }}
                 </div>
             @endforeach
-
        </div> <!-- profile end -->
 
-       <div class="rounded-md border border-gray-900 flex flex-col items-center justify-center w-full md:w-2/4 p-8 mb-4">
+       <div class="rounded-md border border-gray-900 flex flex-col items-center justify-center w-full md:w-2/4 p-8 mb-4 bg-yellow-100">
             <div class="flex items-center flex-col md:flex-row md:justify-between w-full md:mb-4 mb-8">
-                <div class="flex">
-                    <span class="font-semibold text-gray-700"> Projects </span>
+                <div class="flex justify-center items-center">
+                    <span class="font-semibold text-3xl"> 🗃️ </span>
                     <span class="pl-1 font-semibold"> ({{ $projects->total() }})</span>
                 </div>
                 <a 
                     href="{{route('projects')}}"
-                    class="font-semibold hover:text-green-500 hover:underline transition ease-in-out text-xl"
+                    class="font-semibold hover:text-purple-500 hover:underline transition ease-in-out text-xl"
                 >
                     View all
                 </a>

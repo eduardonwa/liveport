@@ -16,7 +16,7 @@
     </div> <!-- display_date end -->
 </div> <!-- left column end -->
 
-<div class="col-span-3 flex-auto p-4 border border-gray-900 border-t-0 md:rounded-tr-md md:border-t md:border-l-0">
+<div class="col-span-3 flex-auto p-4 border border-gray-900 border-t-0 md:rounded-tr-md md:border-t md:border-l-0 bg-tri-two">
     <div>
         {{ $project->description }}
     </div>

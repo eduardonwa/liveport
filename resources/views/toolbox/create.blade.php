@@ -6,7 +6,7 @@
         <span
             x-on:click="show = ! show"
             x-text=" show ? 'Nevermind' : '🧰 New Tool' "
-            class="border-2 border-purple-600 hover:bg-purple-900 hover:text-gray-50 transition ease-in-out transform hover:scale-125 duration-300 p-2 rounded-md text-gray-900 font-semibold text-sm shadow-2xl cursor-pointer"
+            class="border-2 border-purple-600 bg-black text-white transition ease-in-out transform hover:scale-125 duration-300 p-2 rounded-md font-semibold text-sm shadow-2xl cursor-pointer"
         >
         </span> <!-- quality button end -->
 

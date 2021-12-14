@@ -1,4 +1,5 @@
-<form 
+<form
+    wire:submit.prevent="deleteQuality"
     action="{{ route('quality.destroy', ['quality' => $quality ]) }}"
     method="POST"
 >

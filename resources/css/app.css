@@ -9,4 +9,16 @@
     .placeholder-regular::placeholder {
         font-style: normal;
     }
+    .cool-bg {
+        background-color: #f7f5e5;
+        background-image: radial-gradient(#000000 1px, #f7f5e5 1px);
+        background-size: 20px 20px;
+    }
+    .cool-bg-purple {
+        background-color: #E5E7F7;
+        background: repeating-linear-gradient( -45deg, #444cf7, #444cf7 5px, #E5E7F7 5px, #E5E7F7 25px );
+    }
+    .cool-bg-plain {
+        background-color: #f7f5e5;
+    }
 }
