@@ -4,6 +4,7 @@ use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Quality;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\MultiFormProfile;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\QualityController;
@@ -40,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
+    // Route::get('/profile/create', MultiFormProfile::class)->name('profile.create'); // Livewire
     Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
     Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/{profile}', [ProfileController::class, 'update'])->name('profile.update');

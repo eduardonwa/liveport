@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
-    <div class="p-2 bg-gray-200 space-x-2">
+    <div class="p-2 cool-bg space-x-2">
         <a href="/projects" class="hover:text-green-400 transition ease-in">Projects</a>
         <span> > </span>
         <a class="font-semibold">{{ $project->title }}</a>

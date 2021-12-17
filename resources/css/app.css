@@ -14,6 +14,15 @@
         background-image: radial-gradient(#000000 1px, #f7f5e5 1px);
         background-size: 20px 20px;
     }
+    @variants hover {
+        .cool-bg-button {
+             background-color: #91e6a3;
+             background-image:  linear-gradient(135deg, #7b84b9 25%, transparent 25%), linear-gradient(225deg, #7b84b9 25%, transparent 25%), linear-gradient(45deg, #7b84b9 25%, transparent 25%), linear-gradient(315deg, #7b84b9 25%, #91e6a3 25%);
+             background-position:  10px 0, 10px 0, 0 0, 0 0;
+             background-size: 20px 20px;
+             background-repeat: repeat;
+         }
+    }
     .cool-bg-purple {
         background-color: #E5E7F7;
         background: repeating-linear-gradient( -45deg, #444cf7, #444cf7 5px, #E5E7F7 5px, #E5E7F7 25px );

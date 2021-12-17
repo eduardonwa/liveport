@@ -5,10 +5,10 @@
     >
         <span
             x-on:click="show = ! show"
-            x-text=" show ? 'Done' : '🙌 New Quality' "
-            class="border-2 border-purple-600 bg-black text-gray-50 transition ease-in-out transform hover:scale-125 duration-300 p-2 rounded-md font-semibold text-sm cursor-pointer"
+            x-text=" show ? 'Done' : '🧰 New Tool' "
+            class="border-2 border-purple-600 bg-black text-white transition ease-in-out transform hover:scale-125 duration-300 p-2 rounded-md font-semibold text-sm shadow-2xl cursor-pointer"
         >
-        </span> <!-- quality button end -->
+        </span> <!-- tool button end -->
 
         <form
             wire:submit.prevent="submitForm"
@@ -22,13 +22,13 @@
         @csrf
             <input
                 required
-                wire:model.lazy="quality"
+                wire:model.lazy="tool"
                 class="focus:ring-2 bg-white border-2 border-l-0 border-t-0 border-r-0 text-center font-semibold focus:ring-blue-200 rounded-sm h-8 text-sm bg-transparent w-full placeholder-italic"
                 type="text"
-                name="quality"
-                placeholder="New quality"
+                name="tool"
+                placeholder="New Tool"
             >
-                @error('quality') <p class="text-red-500 bg-white p-2 rounded-md"> {{ $message }} </p> @enderror 
+                @error('tool') <p class="text-red-500 bg-white p-2 rounded-md"> {{ $message }} </p> @enderror <!-- tool end -->
             <div class="flex justify-center items-center">
                 <button
                     type="submit"
@@ -37,6 +37,6 @@
                     Add
                 </button>
             </div>
-        </form> <!-- quality form end -->
+        </form> <!-- tool form end -->
    </div> 
 </div> <!-- wrapper end -->

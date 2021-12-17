@@ -64,8 +64,8 @@
             <div class="relative">
                 <div class="md:sticky md:top-5 flex items-center space-y-5 p-8 flex-col justify-center rounded-md h-auto cool-bg-purple bg-yellow-100 shadow-2xl">
                     <img class="rounded-full shadow-2xl" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
-                    @livewire('quality-form', key($quality->quality))
-                    @include('toolbox.create')
+                    @livewire('quality-form', [], key('quality-form'))
+                    @livewire('tool-form', [], key('tool-form'))
                 </div>
             </div> <!-- profile picture & qualities end -->
             
@@ -96,33 +96,15 @@
                         @endforeach
                 </div> <!-- projects end -->
                 
-                <div class="my-4 md:grid grid-cols-2 gap-x-4">
+                <div class="my-4 md:grid grid-cols-2 gap-x-8">
                     <div class="mb-8 col-start-1 row-start-1">
                         <h1 class="font-bold text-xl mb-2">Qualities</h1>
-                        @livewire('profile-list')
+                        @livewire('quality-list')
                     </div> <!-- qualities end -->
 
                     <div class="mb-8 row-start-1 col-start-2">
                         <h1 class="font-bold text-xl mb-2">Toolbox</h1>
-                        @foreach ($toolbox as $toolbox)
-                            <ul 
-                                x-data="{ show : false }"
-                                x-on:mouseout="show = false"
-                            >
-                                <li
-                                    x-on:mouseover="show = true"
-                                    class="flex items-center mb-1 cursor-pointer"
-                                >
-                                    {{ $toolbox->tool }}
-                                    <span 
-                                        x-show="show" 
-                                        style="display: none;"
-                                    >
-                                        @include('toolbox.destroy')
-                                    </span>
-                                </li>
-                            </ul>
-                        @endforeach
+                        @livewire('tool-list')
                     </div> <!-- toolbox end -->
                 </div>  <!-- toolbox & qualities end -->
 

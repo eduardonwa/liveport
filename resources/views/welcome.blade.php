@@ -36,7 +36,7 @@
 <body class="cool-bg">
 
     <div 
-        class="w-screen h-screen absolute bg-yellow-50"
+        class="w-screen h-screen absolute cool-bg z-10"
         x-data="{ loader : true}"
         x-init="setTimeout(()=>loader=false,300)"
         x-show="loader"
