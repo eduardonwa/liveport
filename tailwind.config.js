@@ -22,6 +22,8 @@ module.exports = {
         extend: {
             opacity: ['disabled'],
             backgroundColor: ['active'],
+            borderColor: ['focus'],
+            
         },
         fill: ['hover', 'focus'],
     },

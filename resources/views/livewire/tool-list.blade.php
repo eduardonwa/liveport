@@ -7,14 +7,11 @@
             <div
                 @mouseover="hover=true" 
                 @mouseover.away="hover=false" 
-                class="bg-yellow-50 border border-gray-500 hover:border-transparent transition ease-in-out hover:bg-red-500 rounded-md h-auto p-2 w-auto"
+                onclick="confirm('Are you sure you want to delete {{ count($checked) }} item(s)?') || event.stopImmediatePropagation()"
+                wire:click="removeTools()"
+                class="bg-yellow-50 border font-semibold text-black text-sm hover:text-gray-50 cursor-pointer border-gray-500 hover:border-transparent transition ease-in-out hover:bg-red-500 rounded-md h-auto p-2 w-auto"
             >
-                <p 
-                    class="text-black hover:text-gray-50 font-semibold text-sm cursor-pointer" 
-                    x-text="hover == true ? 'Delete? ({{ count($checked) }})' : 'Selection'"
-                    onclick="confirm('Are you sure you want to delete {{ count($checked) }} item(s)?') || event.stopInmediatePropagation()"
-                    wire:click="removeTools()">
-                </p>
+                <p x-text="hover == true ? 'Delete? ({{ count($checked) }})' : 'Selection ({{ count($checked) }})'"></p>
             </div>
         </div> <!-- bulk delete button end -->
     @endif
@@ -36,9 +33,9 @@
             x-on:mouseover="show = true"
             class="flex items-center cursor-pointer"
         >            
-            <label class="flex items-center justify-start cursor-pointer group border-transparent border-2 rounded-md hover:border-blue-500 w-full">
-                <input type="checkbox" value="{{ $tool->id }}"  wire:model="checked" class="hidden bg-transparent border-transparent rounded-full">
-                <span class="p-1 w-full">{{ $tool->tool }}</span>
+            <label class="px-3 flex items-center justify-start cursor-pointer group border-transparent border-2 rounded-md hover:border-blue-500 w-full">
+                <input type="checkbox" value="{{ $tool->id }}"  wire:model="checked" class="focus:ring-0 bg-transparent border-0 rounded-full">
+                <span class="px-3 p-1 w-full active:bg-gray-500">{{ $tool->tool }}</span>
                 <span 
                     x-show="show" 
                     style="display: none;"
