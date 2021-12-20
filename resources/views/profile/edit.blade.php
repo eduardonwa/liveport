@@ -7,6 +7,7 @@
             
             action="/profile/{{ $profile->id }}"
             method="POST"
+            enctype="multipart/form-data"
         >
             @method('PUT')
             @include('profile.form', [

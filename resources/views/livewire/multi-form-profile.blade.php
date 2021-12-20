@@ -50,7 +50,30 @@
                 </div>
             @elseif($currentPage === 3)
                 <div class="flex flex-col items-center justify-center w-full h-full rounded-md">
-                    <img class="rounded-full shadow-2xl h-full cursor-pointer" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
+                    <label 
+                        for="profile_pic" 
+                        class="block focus-visible:ring-2 focus-visible:ring-rose-500"
+                    >
+                    <span 
+                        class="overflow-hidden h-56 w-56 border border-gray-400 rounded-full flex items-center justify-center cursor-pointer"
+                    >
+                        @if ($profile_pic)
+                            <img class="h-60 w-60 rounded-full" src="{{ $profile_pic->temporaryUrl() }}">
+                        @else    
+                            <svg class="h-auto w-auto relative top-10 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                        @endif
+                    </span>
+                    <input
+                        wire:model="profile_pic"
+                        type="file"
+                        name="profile_pic"
+                        id="profile_pic"
+                        class="hidden"
+                        required
+                    >      
+                        @error('profile_pic') <span class="text-md text-red-500 mt-1 font-semibold">{{ $message }}</span> @enderror          
                 </div>
             @elseif($currentPage === 4)
                 <div class="flex flex-col items-center justify-center w-full h-full rounded-md">

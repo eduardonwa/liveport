@@ -14,6 +14,7 @@ class Profile extends Model
         'user_id',
         'full_name',
         'bio',
+        'profile_pic',
         'linkedin_url',
         'optional',
     ];

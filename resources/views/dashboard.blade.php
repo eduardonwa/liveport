@@ -46,9 +46,9 @@
 
             </div> <!-- header end -->
 
-            <img class="rounded-full shadow-2xl mb-8" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
-            
             @foreach ($profile as $profile)
+
+            <img class="rounded-full shadow-2xl w-60 h-60" src="{{ asset('storage/' .  $profile->profile_pic) }}" alt="profile picture">
                 <div class="my-4 font-bold text-lg text-gray-700">
                     {{ $profile->optional }}
                 </div>

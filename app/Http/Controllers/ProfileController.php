@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -27,11 +31,17 @@ class ProfileController extends Controller
         $profile = request()->validate([
             'full_name' => ['required'],
             'bio' => ['required'],
+            'profile_pic' => ['image', 'nullable'],
             'linkedin_url' => ['url', 'nullable'],
             'optional' => ['nullable']
         ]);
 
         $profile['user_id'] = auth()->id();
+        
+        if(request()->has('profile_pic')) {
+            $profile['profile_pic'] = request()->file('profile_pic')->store('profiles');
+        }
+
         $profileObject = new Profile($profile);
         $profileObject->save();
 
@@ -45,8 +55,16 @@ class ProfileController extends Controller
     }
 
     public function update(Profile $profile, Request $request)
-    {   
-        $profile->update($this->validateProfile($request));
+    {           
+        $data = $this->validateProfile($request);
+
+        if (request()->hasFile('profile_pic')) {
+            Storage::delete($profile->profile_pic);             
+            $data['profile_pic'] = Storage::disk('public')->put('profiles', $request->file('profile_pic'));
+        }
+
+        $profile->update($data);
+        
         return redirect('/profile')->with('edit_profile', 'You\'ve now changed your profile!');
     }
 
@@ -55,6 +73,7 @@ class ProfileController extends Controller
         return $request->validate([
             'full_name' => ['required'],
             'bio'  => ['required'],
+            'profile_pic' => ['image', 'nullable'],
             'linkedin_url'  => ['url', 'nullable'],
             'optional' => ['nullable'],
         ]);

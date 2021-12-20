@@ -1,7 +1,39 @@
 @csrf
 <div class="flex flex-col items-center justify-center md:grid grid-cols-4 gap-x-6 gap-y-12">
-    <div class="flex items-center justify-center md:mt-12 cursor-pointer col-start-4 row-start-1">
-        <img class="rounded-full shadow-2xl" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
+    <div class="outline-none flex items-center justify-center md:mt-12 cursor-pointer col-start-4 row-start-1">        
+        @if (isset($profile->profile_pic))
+            <label 
+                for="profile_pic" 
+                class="block focus-visible:ring-2 focus-visible:ring-rose-500"
+            >
+                <img src="{{ asset('storage/'. $profile->profile_pic) }}" class="rounded-full shadow-2xl h-52 w-52 cursor-pointer" alt="">
+            <input
+                type="file"
+                name="profile_pic"
+                id="profile_pic"
+                class="hidden"
+            >
+                @error('profile_pic') <p class="text-red-500 bg-white p-2 rounded-md"> {{ $message }} </p> @enderror 
+        @else
+            <label 
+                for="profile_pic" 
+                class="block focus-visible:ring-2 focus-visible:ring-rose-500"
+            >
+            <span 
+                class="overflow-hidden h-56 w-56 border border-gray-400 rounded-full flex items-center justify-center cursor-pointer"
+            >
+                <svg class="h-auto w-auto relative top-10 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+            </span>
+
+            <input
+                type="file"
+                name="profile_pic"
+                id="profile_pic"
+                class="hidden"
+            >
+        @endif
     </div> <!-- profile picture end -->
 
     <div class="col-start-1 col-end-4">
@@ -17,11 +49,7 @@
                 placeholder="Full name"
                 value="{{ old('full_name') ?? $profile->full_name }}"
             >
-                @error('full_name')
-                    <p class="text-red-500 bg-white p-2 rounded-md">
-                        {{ $errors->first('full_name') }}
-                    </p>
-                @enderror
+                @error('full_name') <p class="text-red-500 bg-white p-2 rounded-md"> {{ $message }} </p> @enderror
         </div>
 
         <div 

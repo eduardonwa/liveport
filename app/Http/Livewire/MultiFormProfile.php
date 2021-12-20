@@ -4,16 +4,18 @@ namespace App\Http\Livewire;
 
 use App\Models\Profile;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 
 class MultiFormProfile extends Component
 {
+    use WithFileUploads;
+    
     public $currentPage = 0;
 
     public $full_name;
     public $bio;
-    // profile picture
-    public $profilePic;
+    public $profile_pic;
     public $linkedin_url;
     public $optional;
     
@@ -32,7 +34,7 @@ class MultiFormProfile extends Component
         ],
         3 => [
             'heading' => 'Upload a profile picture',
-            'subheading' => 'Smile now!',
+            'subheading' => 'Smile!',
         ],
         4 => [
             'heading' => 'Do you have a LinkedIn Profile?',
@@ -54,6 +56,9 @@ class MultiFormProfile extends Component
         ],
         2 => [
             'bio' => ['required', 'min:10']
+        ],
+        3 => [
+            'profile_pic' => ['required', 'image']
         ],
         4 => [
             'linkedin_url' => ['nullable', 'url']
@@ -88,7 +93,7 @@ class MultiFormProfile extends Component
             'user_id' => Auth::user()->id,
             'full_name' => $this->full_name,
             'bio' => $this->bio,
-            // profile picture
+            'profile_pic' => $this->profile_pic->store('profiles'),
             'linkedin_url' => $this->linkedin_url,
             'optional' => $this->optional
         ]);

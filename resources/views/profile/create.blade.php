@@ -6,6 +6,7 @@
         <form
             action="{{ route('profile.store') }}"
             method="POST"
+            enctype="multipart/form-data"
         >
             @include('profile.form', [
                 'profile' => new App\Models\Profile

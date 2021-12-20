@@ -63,7 +63,7 @@
         @foreach ($profile as $profile)
             <div class="relative">
                 <div class="md:sticky md:top-5 flex items-center space-y-5 p-8 flex-col justify-center rounded-md h-auto cool-bg-purple bg-yellow-100 shadow-2xl">
-                    <img class="rounded-full shadow-2xl" src="https://source.unsplash.com/200x200/?face&crop=face&v=1" alt="profile picture">
+                    <img class="rounded-full shadow-2xl w-60 h-60" src="{{ asset('storage/' .  $profile->profile_pic) }}" alt="profile picture">
                     @livewire('quality-form', [], key('quality-form'))
                     @livewire('tool-form', [], key('tool-form'))
                 </div>
